@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>乒乓球网站</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to right, #1e3a8a 50%, #dc2626 50%);
+      }
+      .section {
+        padding: 20px;
+        margin-bottom: 20px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 15px;
+        text-align: center;
+      }
+      .flex-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px; /* 将间距设为原来的两倍 */
+      }
+      .flex-item {
+        flex-basis: calc(33.33% - 14px); /* 调整宽度以适应新的间距 */
+        margin-bottom: 20px; /* 增加垂直间距 */
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+      }
+      .flex-item h3 {
+        margin: 0;
+        padding: 10px;
+        font-size: 20px;
+      }
+      .image-placeholder {
+        background-color: #ddd;
+        height: 150px;
+        width: 100%;
+        margin-bottom: 10px;
+        border-radius: 10px 10px 0 0;
+      }
+      .video-placeholder {
+        background-color: #ddd;
+        height: 400px;
+        border-radius: 10px;
+      }
+      .menu {
+        display: flex;
+        justify-content: space-around;
+        background-color: #f0f0f0;
+        padding: 10px 0;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+      .menu a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+      }
+      .terms-honors-video {
+        display: flex;
+        justify-content: space-between;
+      }
+      .terms-honors {
+        flex-basis: 48%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .terms-honors > div {
+        height: 190px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      .terms {
+        background-color: #1e3a8a;
+      }
+      .honors {
+        background-color: #dc2626;
+      }
+      .video-container {
+        flex-basis: 48%;
+      }
+      .athlete-item {
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      .athlete-item .image-placeholder {
+        width: 100%;
+        padding-top: 33.33%;
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px 10px 0 0;
+      }
+      .athlete-item .athlete-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 10%;
+      }
+      .athlete-item p {
+        margin: 10px 0 0 0;
+        font-size: 18px; /* 将字体大小减小三分之一，从28px变为18px */
+        color: black;
+        font-weight: bold;
+      }
+    </style>
+    <script src="assets/js/translations.js"></script>
+    <script src="assets/js/languageSwitch.js"></script>
+  </head>
+  <body>
+    <!-- 第一个板块：目录和大照片 -->
+    <div class="section">
+      <nav class="menu">
+        <a href="index.html" data-translate="首页">首页</a>
+        <a href="#" data-translate="赛事">赛事</a>
+        <a href="#" data-translate="运动员">运动员</a>
+        <a href="#" data-translate="关于更多">关于更多</a>
+        <a href="article-page.html" data-translate="历史">历史</a>
+        <button
+          id="languageToggle"
+          style="
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: #1e3a8a;
+            color: white;
+            cursor: pointer;
+          "
+        >
+          切换到英文
+        </button>
+      </nav>
+      <img src="test.jpeg" alt="大照片" style="height: 400px" />
+    </div>
+
+    <!-- 第二个板块：赛事 -->
+    <div class="section">
+      <h2 data-translate="赛事">赛事</h2>
+      <div class="flex-container">
+        <div class="flex-item" style="background-color: #0f2a6f">
+          <h3 data-translate="世锦赛">世锦赛</h3>
+        </div>
+        <div class="flex-item" style="background-color: #2f4f9f">
+          <h3 data-translate="世界杯">世界杯</h3>
+        </div>
+        <div class="flex-item" style="background-color: #4f74cf">
+          <h3 data-translate="WTT">WTT</h3>
+        </div>
+        <div class="flex-item" style="background-color: #bc1515">
+          <h3 data-translate="奥运会">奥运会</h3>
+        </div>
+        <div class="flex-item" style="background-color: #cc3535">
+          <h3 data-translate="亚锦赛">亚锦赛</h3>
+        </div>
+        <div class="flex-item" style="background-color: #dc5555">
+          <h3 data-translate="其他">其他</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- 第三个板块：运动员 -->
+    <div class="section">
+      <h2 data-translate="运动员">运动员</h2>
+      <div class="flex-container">
+        <div class="flex-item athlete-item">
+          <div class="image-placeholder">
+            <img src="assets/images/dn.jpg" alt="丁宁" class="athlete-image" />
+          </div>
+          <p data-translate="丁宁">丁宁</p>
+        </div>
+        <div class="flex-item athlete-item">
+          <div class="image-placeholder">
+            <img
+              src="assets/images/fzd.jpg"
+              alt="樊振东"
+              class="athlete-image"
+            />
+          </div>
+          <p data-translate="樊振东">樊振东</p>
+        </div>
+        <div class="flex-item athlete-item">
+          <div class="image-placeholder">
+            <img src="assets/images/ml.jpg" alt="马龙" class="athlete-image" />
+          </div>
+          <p data-translate="马龙">马龙</p>
+        </div>
+        <div class="flex-item athlete-item">
+          <div class="image-placeholder">
+            <img
+              src="assets/images/sys.png"
+              alt="孙颖莎"
+              class="athlete-image"
+            />
+          </div>
+          <p data-translate="孙颖莎">孙颖莎</p>
+        </div>
+        <div class="flex-item athlete-item">
+          <div class="image-placeholder">
+            <img
+              src="assets/images/wcq.jpg"
+              alt="王楚钦"
+              class="athlete-image"
+            />
+          </div>
+          <p data-translate="王楚钦">王楚钦</p>
+        </div>
+        <div class="flex-item athlete-item">
+          <div class="image-placeholder">
+            <img src="assets/images/xx.jpg" alt="许昕" class="athlete-image" />
+          </div>
+          <p data-translate="许昕">许昕</p>
+        </div>
+      </div>
+      <a
+        href="#"
+        style="
+          display: block;
+          text-align: center;
+          margin-top: 20px;
+          color: #1e3a8a;
+          font-weight: bold;
+          text-decoration: none;
+        "
+        data-translate="查看更多运动员"
+        >查看更多运动员</a
+      >
+    </div>
+
+    <!-- 第四个板块：关于更多 -->
+    <div class="section">
+      <div class="terms-honors-video">
+        <div class="terms-honors">
+          <div class="terms">
+            <h3 data-translate="体育术语">体育术语</h3>
+            <p data-translate="乒乓球专业术语解释">乒乓球专业术语解释</p>
+          </div>
+          <div class="honors">
+            <h3 data-translate="运动员称号">运动员称号</h3>
+            <p data-translate="著名运动员荣誉称号">著名运动员荣誉称号</p>
+          </div>
+        </div>
+        <div class="video-container">
+          <a
+            href="video-grid-page.html"
+            style="
+              display: block;
+              text-align: center;
+              margin-bottom: 10px;
+              color: #1e3a8a;
+              font-weight: bold;
+              text-decoration: none;
+            "
+            data-translate="乒乒乓乓全11季（点击即看）"
+            >乒乒乓乓全11季（点击即看）</a
+          >
+          <video controls width="100%">
+            <source src="assets/video/pingpong1.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <!-- 第五个板块：乒乓球历史 -->
+    <div class="section">
+      <h2 data-translate="乒乓球历史">乒乓球历史</h2>
+      <div class="flex-container">
+        <div class="flex-item" style="background-color: #1e3a8a">
+          <a
+            href="article-page.html"
+            style="color: white; text-decoration: none"
+            ><h3 data-translate="历史和起源">历史和起源</h3></a
+          >
+        </div>
+        <div class="flex-item" style="background-color: #2f4f9f">
+          <a
+            href="article-page2.html"
+            style="color: white; text-decoration: none"
+            ><h3 data-translate="世界发展史">世界发展史</h3></a
+          >
+        </div>
+        <div class="flex-item" style="background-color: #dc2626">
+          <a
+            href="article-page3.html"
+            style="color: white; text-decoration: none"
+            ><h3 data-translate="中国发展史">中国发展史</h3></a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
